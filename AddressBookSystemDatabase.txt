@@ -267,4 +267,27 @@ mysql> select type,count(type) from AddressBook group by type;
 +---------+-------------+
 3 rows in set (0.00 sec)
 
+//uc:11 to add new contacts and updates their types
+
+mysql> insert into AddressBook(firstname,lastName,type,address,city,state,zip,phoneNumber,email) values
+    -> ('Suryansh','shukla','family','jnagar','hassan','karnataka','678987','9876556789','surya@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into AddressBook(firstname,lastName,type,address,city,state,zip,phoneNumber,email) values
+    -> ('sushmitha','kuyyamudi','friend','coorg','mangalore','bangalore','678987','9087654567','sush@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from AddressBook;
++-----------+-----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+| firstname | lastName  | type    | address    | city        | State     | zip    | phoneNumber | email                 |
++-----------+-----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+| abhishek  | pandey    | Family  | srs        | nagpur      | mumbai    | 345678 | 9008938916  | abhi@gmail.com        |
+| neha      | shukla    | teacher | marathalli | bangalore   | karnataka | 560037 | 7899927018  | nehashukla@gmail.com  |
+| niraj     | singh     | friend  | m.n.halli  | hospiyarpur | punjab    | 560087 | 9739927107  | nirajsingh@gmail.com  |
+| priya     | pandey    | family  | jindal     | bangalore   | karnataka | 560073 | 7760500273  | priyapandey@gmail.com |
+| Suryansh  | shukla    | family  | jnagar     | hassan      | karnataka | 678987 | 9876556789  | surya@gmail.com       |
+| sushmitha | kuyyamudi | friend  | coorg      | mangalore   | bangalore | 678987 | 9087654567  | sush@gmail.com        |
++-----------+-----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+6 rows in set (0.00 sec)
+
 

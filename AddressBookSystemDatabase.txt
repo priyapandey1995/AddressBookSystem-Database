@@ -59,3 +59,26 @@ mysql> describe AddressBook;
 | email       | varchar(50)  | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.01 sec)
+
+//uc3:To insert 
+
+mysql> insert into AddressBook(firstname,lastName,address,city,state,zip,phoneNumber,email) values
+    -> ('priya','pandey','jindal','bangalore','karnataka','560073','888432756','priyapandey@gmail.com');
+    -> ('niraj','singh','m.n.halli','hospiyarpur','punjab','560087','9739927107','nirajsingh@gmail.com');
+    -> ('neha','shukla','marathalli','bangalore','karnataka','560037','7899927018','nehashukla@gmail.com');
+    -> ('abhishek','pandey','srs','nagpur','mumbai','345678','9008938916','abhi@gmail.com');
+    -> ('adarh','kumar','khemapur','bhadhoi','UttarPradesh','678978','8884327526','adi@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> select * from AddressBook;
++-----------+----------+------------+-------------+--------------+--------+-------------+-----------------------+
+| firstname | lastName | address    | city        | State        | zip    | phoneNumber | email                 |
++-----------+----------+------------+-------------+--------------+--------+-------------+-----------------------+
+| abhishek  | pandey   | srs        | nagpur      | mumbai       | 345678 | 9008938916  | abhi@gmail.com        |
+| adarh     | kumar    | khemapur   | bhadhoi     | UttarPradesh | 678978 | 8884327526  | adi@gmail.com         |
+| neha      | shukla   | marathalli | bangalore   | karnataka    | 560037 | 7899927018  | nehashukla@gmail.com  |
+| niraj     | singh    | m.n.halli  | hospiyarpur | punjab       | 560087 | 9739927107  | nirajsingh@gmail.com  |
+| priya     | pandey   | jindal     | bangalore   | karnataka    | 560073 | 888432756   | priyapandey@gmail.com |
++-----------+----------+------------+-------------+--------------+--------+-------------+-----------------------+
+5 rows in set (0.00 sec)

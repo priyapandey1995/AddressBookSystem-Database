@@ -144,3 +144,37 @@ mysql> select * from AddressBook where city = "bangalore";
 +-----------+----------+------------+-----------+-----------+--------+-------------+-----------------------+
 2 rows in set (0.00 sec)
 
+//uc7:to understand the size using count
+
+
+mysql> select * from AddressBook;
++-----------+----------+------------+-------------+-----------+--------+-------------+-----------------------+
+| firstname | lastName | address    | city        | State     | zip    | phoneNumber | email                 |
++-----------+----------+------------+-------------+-----------+--------+-------------+-----------------------+
+| abhishek  | pandey   | srs        | nagpur      | mumbai    | 345678 | 9008938916  | abhi@gmail.com        |
+| neha      | shukla   | marathalli | bangalore   | karnataka | 560037 | 7899927018  | nehashukla@gmail.com  |
+| niraj     | singh    | m.n.halli  | hospiyarpur | punjab    | 560087 | 9739927107  | nirajsingh@gmail.com  |
+| priya     | pandey   | jindal     | bangalore   | karnataka | 560073 | 7760500273  | priyapandey@gmail.com |
++-----------+----------+------------+-------------+-----------+--------+-------------+-----------------------+
+4 rows in set (0.00 sec)
+
+mysql> select city,count(city) as count from AddressBook group by city;
++-------------+-------+
+| city        | count |
++-------------+-------+
+| nagpur      |     1 |
+| bangalore   |     2 |
+| hospiyarpur |     1 |
++-------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select state,count(state) as count from AddressBook group by state;
++-----------+-------+
+| state     | count |
++-----------+-------+
+| mumbai    |     1 |
+| karnataka |     2 |
+| punjab    |     1 |
++-----------+-------+
+3 rows in set (0.00 sec)
+

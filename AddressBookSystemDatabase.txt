@@ -178,3 +178,31 @@ mysql> select state,count(state) as count from AddressBook group by state;
 +-----------+-------+
 3 rows in set (0.00 sec)
 
+//UC8:To retrieve alphabetically
+
+
+mysql> select firstname,city from AddressBook;
++-----------+-------------+
+| firstname | city        |
++-----------+-------------+
+| abhishek  | nagpur      |
+| neha      | bangalore   |
+| niraj     | hospiyarpur |
+| priya     | bangalore   |
++-----------+-------------+
+4 rows in set (0.00 sec)
+
+//to retrieve city in alphabetically way  
+
+mysql> select firstname,lastName from AddressBook order by city;
++-----------+----------+
+| firstname | lastName |
++-----------+----------+
+| neha      | shukla   |
+| priya     | pandey   |
+| niraj     | singh    |
+| abhishek  | pandey   |
++-----------+----------+
+4 rows in set (0.00 sec)
+
+

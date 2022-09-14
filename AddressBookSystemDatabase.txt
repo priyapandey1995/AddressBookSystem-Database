@@ -205,4 +205,53 @@ mysql> select firstname,lastName from AddressBook order by city;
 +-----------+----------+
 4 rows in set (0.00 sec)
 
+//UC:9 to add feild by name as type
+    
+mysql> alter table AddressBook add type varchar(20) after lastName;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc AddressBook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstname   | varchar(150) | NO   | PRI | NULL    |       |
+| lastName    | varchar(50)  | NO   |     | NULL    |       |
+| type        | varchar(20)  | YES  |     | NULL    |       |
+| address     | varchar(50)  | NO   |     | NULL    |       |
+| city        | varchar(50)  | NO   |     | NULL    |       |
+| State       | varchar(50)  | NO   |     | NULL    |       |
+| zip         | varchar(50)  | NO   |     | NULL    |       |
+| phoneNumber | varchar(10)  | NO   |     | NULL    |       |
+| email       | varchar(50)  | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> update AddressBook set type = 'Family' where firstName ='abhishek';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update AddressBook set type = 'teacher' where firstName ='neha';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update AddressBook set type = 'friend' where firstName ='niraj';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update AddressBook set type = 'family' where firstName ='priya';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from AddressBook;
++-----------+----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+| firstname | lastName | type    | address    | city        | State     | zip    | phoneNumber | email                 |
++-----------+----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+| abhishek  | pandey   | Family  | srs        | nagpur      | mumbai    | 345678 | 9008938916  | abhi@gmail.com        |
+| neha      | shukla   | teacher | marathalli | bangalore   | karnataka | 560037 | 7899927018  | nehashukla@gmail.com  |
+| niraj     | singh    | friend  | m.n.halli  | hospiyarpur | punjab    | 560087 | 9739927107  | nirajsingh@gmail.com  |
+| priya     | pandey   | family  | jindal     | bangalore   | karnataka | 560073 | 7760500273  | priyapandey@gmail.com |
++-----------+----------+---------+------------+-------------+-----------+--------+-------------+-----------------------+
+4 rows in set (0.00 sec)
+
 
